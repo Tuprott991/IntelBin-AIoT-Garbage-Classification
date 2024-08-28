@@ -1,0 +1,87 @@
+[
+    {
+        "id": "29fa53a817a08065",
+        "type": "firebase modify",
+        "z": "9b4101f9f2411af4",
+        "name": "push to firebase",
+        "firebaseconfig": "",
+        "childpath": "/History",
+        "method": "push",
+        "value": "msg.payload",
+        "priority": "msg.priority",
+        "x": 580,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6260208fe963f34a",
+        "type": "mqtt in",
+        "z": "9b4101f9f2411af4",
+        "name": "",
+        "topic": "waste/recognition",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "ba25b7275e7b3474",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 1120,
+        "wires": [
+            [
+                "ac646ee0efe59071"
+            ]
+        ]
+    },
+    {
+        "id": "ac646ee0efe59071",
+        "type": "function",
+        "z": "9b4101f9f2411af4",
+        "name": "Trash data",
+        "func": "msg.payload = {\n    Type: msg.payload,  // giả sử msg.payload là dữ liệu rác nhận được\n    Time: Date.now()  // thêm timestamp\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1120,
+        "wires": [
+            [
+                "29fa53a817a08065"
+            ]
+        ]
+    },
+    {
+        "id": "ba25b7275e7b3474",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "1, 1",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
