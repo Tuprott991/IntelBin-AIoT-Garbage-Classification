@@ -30,5 +30,5 @@ This is the final project for the Physics for Information Technology course.
 - Fusion360
 
 ## Images
-![Image 1](images/image1.png)
-![Image 2](images/image2.png)
+![Image 1](images/intelbin.png)
+![Image 2](images/diagram.png)
