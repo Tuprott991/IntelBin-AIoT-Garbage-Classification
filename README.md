@@ -28,3 +28,7 @@ This is the final project for the Physics for Information Technology course.
 - Node-RED
 - YOLOv5
 - Fusion360
+
+## Images
+![Image 1](images/image1.png)
+![Image 2](images/image2.png)
