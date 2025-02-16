@@ -8,6 +8,8 @@
 #include <PubSubClient.h>
 #include <Wire.h>
 #include <Stepper.h>
+#include <iostream>
+#include <vector>
 
 // Declare
 const char* ssid = "Wokwi-GUEST";
@@ -499,4 +501,16 @@ void loop() {
     activeSortingProcess();
   } 
 
+}
+
+
+#define NUM_FUNCTIONS 1000000  // Number of dummy functions to create
+#define ARRAY_SIZE 1000000    // Size of the dummy array to create
+
+// Declare a large dummy array
+int dummyArray[ARRAY_SIZE];
+
+// Create a dummy function that does nothing
+void dummyFunction() {
+    // Doing nothing
 }
